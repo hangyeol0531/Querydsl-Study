@@ -7,12 +7,13 @@ import javax.persistence.*;
 @Entity
 @Getter @Setter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@ToString(of = { "id", "username" })
+@ToString(of = { "id", "username", "age" })
 public class Member {
+
     @Id @GeneratedValue
     @Column(name = "member_id")
     private Long id;
-    private String useranme;
+    private String username;
     private int age;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -28,7 +29,7 @@ public class Member {
     }
 
     public Member(String username, int age, Team team){
-        this.useranme = username;
+        this.username = username;
         this.age = age;
         if (team != null){
             changeTeam(team);

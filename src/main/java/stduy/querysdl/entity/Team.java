@@ -12,8 +12,9 @@ import java.util.List;
 @Entity
 @Getter @Setter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@ToString(of = { "id", "username", "age" })
+@ToString(of = { "id", "username"})
 public class Team {
+
     @Id @GeneratedValue
     private Long id;
     private String name;
